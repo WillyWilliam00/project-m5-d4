@@ -1,8 +1,9 @@
 import {Col, Card} from "react-bootstrap";
 import { useState } from "react";
+import CommentArea from "./CommentArea"
 
 
-export default function SingleBook({img, title}) {
+export default function SingleBook({img, title, asin}) {
 
   const [selected, setSelected] = useState(false)
   
@@ -23,8 +24,10 @@ export default function SingleBook({img, title}) {
              <Card.Body>
                  <Card.Title>{title}</Card.Title>                               
              </Card.Body>
+             {selected && <CommentArea asin={asin} />}
          </Card>
      </Col>
+    
        
     )
 }

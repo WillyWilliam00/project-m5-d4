@@ -23,7 +23,7 @@ export default function TableBook() {
             </Row>
             <Row className="row-gap-5">
                 {fantasy.filter(usingQuery).map((book) => (
-                    <SingleBook img={book.img} title={book.title} key={book.asin}/> 
+                    <SingleBook img={book.img} title={book.title} key={book.asin} asin={book.asin}/> 
                 ))}
 
             </Row>
