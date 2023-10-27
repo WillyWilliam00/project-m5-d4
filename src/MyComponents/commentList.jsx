@@ -1,7 +1,7 @@
 import {Row, Container} from "react-bootstrap";
 import SingleComment from "./SingleComment"
 
-export default function commentList(allComment) {
+export default function CommentList({allComment}) {
     
     return (
         <Container>

@@ -1,16 +1,15 @@
 import {Button, Modal} from 'react-bootstrap';
 
+function ModalError({show, setShow}) {
 
-function modalError() {
+  const handleClose = () => setShow(false);
   
-    const handleClose = () => setShow(false);
-
 
   return (
     <>
         <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Oh Ooh qualcosa non va...</Modal.Title>
+          <Modal.Title>Oh Oh..</Modal.Title>
         </Modal.Header>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -22,4 +21,4 @@ function modalError() {
   );
 }
 
-export default modalError;
+export default ModalError;

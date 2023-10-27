@@ -25,6 +25,10 @@
     outline: 5px solid red;
 }
 
+.DotSpinner-module_container__KTuXu {
+    margin: auto;
+}
+
 @media only screen and (max-width: 600px) {
     .footer-div {
         width: fit-content;

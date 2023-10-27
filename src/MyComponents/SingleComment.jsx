@@ -1,13 +1,14 @@
 import {Row, Container, Col} from "react-bootstrap";
 
-export default function singleComment(commmentText,commentRate){
+export default function SingleComment({commmentText, commentRate}){
 
     return(
 
         <Container>
             <Row>
                 <Col xs={12}>
-                    {commmentText, commentRate}
+                    {commmentText}
+                    {commentRate}
                 </Col>
             </Row>
         </Container>
