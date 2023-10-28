@@ -25,7 +25,7 @@ export default  function CommentArea({asin}){
         .finally(()=>setLoading(false))
         
     },[asin])
-    
+    console.log(allComment)
 
     
     return (
@@ -39,7 +39,7 @@ export default  function CommentArea({asin}){
                   
               /> }
               <CommentList allComment={allComment}/>
-             <AddComment asin={asin} allComment={allComment} setAllComment={setAllComment}/> 
+             <AddComment asin={asin} setAllComment={setAllComment} setLoading={setLoading}  setShow={setShow}/> 
         </Container>    
     )
 }

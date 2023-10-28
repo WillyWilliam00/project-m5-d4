@@ -3,10 +3,11 @@ import {Button, Form} from 'react-bootstrap';
 
 
 
-function AddComment({asin}) {
+function AddComment({asin, setAllComment, setLoading, setShow}) {
 
     const [text, setText] = useState("")
     const [rate, setRate] = useState("")
+    const handleShow = () => setShow(true);
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,12 +29,22 @@ function AddComment({asin}) {
                 (response) => {
                     if (response.ok){
                         alert("Salvato!");
-                        
+                          fetch(`https://striveschool-api.herokuapp.com/api/comments/${asin}`, {
+                          headers: {
+                          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTM3YWIzZmU3NDZhMDAwMTQ4MTQzMmEiLCJpYXQiOjE2OTg0MTQ4MTMsImV4cCI6MTY5OTYyNDQxM30.MEt2ISJjBifylYxkGyIKwaJbmj-MHdsB0Dvrr7rGluc"
+                          }})
+                          .then(r => r.json())
+                          .then(setAllComment)
+                          .catch(handleShow)
+                          .finally(()=>setLoading(false))                       
                     } else {
                         alert("oh oh")
                     }
                 }
             )
+
+            
+          
         
     }
 

@@ -6,8 +6,8 @@ export default function CommentList({allComment}) {
     return (
         <Container>
             <Row>   
-                {allComment.map(comment => (
-                    <SingleComment commmentText={comment.comment} commentRate={comment.rate} key={comment.elementId}/>
+                {allComment.map((comment, i) => (
+                    <SingleComment commmentText={comment.comment} commentRate={comment.rate} key={i}/>
                 ))}
             </Row>
         </Container>
