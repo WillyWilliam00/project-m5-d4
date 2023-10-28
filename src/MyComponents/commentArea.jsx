@@ -38,7 +38,7 @@ export default  function CommentArea({asin}){
                   color="black" 
                   
               /> }
-              <CommentList allComment={allComment}/>
+              {!loading &&<CommentList allComment={allComment}/>}
              <AddComment asin={asin} setAllComment={setAllComment} setLoading={setLoading}  setShow={setShow}/> 
         </Container>    
     )
