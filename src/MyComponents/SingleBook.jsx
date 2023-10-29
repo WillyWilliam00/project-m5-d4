@@ -1,12 +1,13 @@
 import {Col, Card} from "react-bootstrap";
 import { useState } from "react";
-import CommentArea from "./commentArea"
-
+import ModalComment from "./modalComment";
 
 
 export default function SingleBook({img, title, asin}) {
 
   const [selected, setSelected] = useState(false)
+  const [show, setShow] = useState(false);
+ 
   
 
    
@@ -18,7 +19,7 @@ export default function SingleBook({img, title, asin}) {
              <Card.Img  
                 style={{cursor: "pointer"}} variant="top" 
                 src={img} 
-                onClick={() => setSelected(!selected) }  
+                onClick={() => {setSelected(!selected); setShow(true)} }  
                 className="img-fluid"
             />
             
@@ -26,7 +27,7 @@ export default function SingleBook({img, title, asin}) {
                  <Card.Title>{title}</Card.Title>   
                                         
              </Card.Body>
-              {selected && <CommentArea asin={asin} />} 
+              {selected && <ModalComment asin={asin} show={show} setShow={setShow} setSelected={setSelected} selected={selected} />} 
          </Card>
      </Col>
     

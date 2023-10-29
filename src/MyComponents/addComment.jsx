@@ -64,8 +64,8 @@ function AddComment({asin, setAllComment, setLoading, setShow}) {
         <Form.Label>Quanto ti è piaciuto?</Form.Label>
         <Form.Control type="number" min="1" max="5" required value={rate} onChange={(e)=> setRate(e.target.value)}/>
       </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
+      <Button variant="primary" type="submit" >
+        Invia la tua recensione!
       </Button>
     </Form>
   );
