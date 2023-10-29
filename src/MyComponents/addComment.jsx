@@ -13,7 +13,7 @@ function AddComment({asin, setAllComment, setLoading, setShow}) {
       setLoading(true)
       fetch(`https://striveschool-api.herokuapp.com/api/comments/${asin}`, {
       headers: {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTM3YWIzZmU3NDZhMDAwMTQ4MTQzMmEiLCJpYXQiOjE2OTg0MTQ4MTMsImV4cCI6MTY5OTYyNDQxM30.MEt2ISJjBifylYxkGyIKwaJbmj-MHdsB0Dvrr7rGluc"
+      "Authorization": "codice"
       }})
       .then(r => r.json())
       .then(setAllComment)
