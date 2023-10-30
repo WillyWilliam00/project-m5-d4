@@ -27,7 +27,7 @@ export default function SingleBook({img, title, asin}) {
                  <Card.Title>{title}</Card.Title>   
                                         
              </Card.Body>
-              {selected && <ModalComment asin={asin} show={show} setShow={setShow} setSelected={setSelected} selected={selected} />} 
+              {selected && <ModalComment asin={asin} show={show} setShow={setShow}/>} 
          </Card>
      </Col>
     

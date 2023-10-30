@@ -3,21 +3,20 @@ import {Button, Form} from 'react-bootstrap';
 
 
 
-function AddComment({asin, setAllComment, setLoading, setShow}) {
+function AddComment({asin, setAllComment, setLoading}) {
 
     const [text, setText] = useState("")
     const [rate, setRate] = useState("")
-    const handleShow = () => setShow(true);
 
     function GetComment(){
       setLoading(true)
       fetch(`https://striveschool-api.herokuapp.com/api/comments/${asin}`, {
       headers: {
-      "Authorization": "codice"
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTM3YWIzZmU3NDZhMDAwMTQ4MTQzMmEiLCJpYXQiOjE2OTg2ODI5NTQsImV4cCI6MTY5OTg5MjU1NH0.HHBtM4-HlPu0aYhgFK4ucJa0J5WmqpZZFSS5KULk3xo"
       }})
       .then(r => r.json())
       .then(setAllComment)
-      .catch(handleShow)
+      .catch(()=>alert("oh oh"))
       .finally(()=>setLoading(false))     
     }
     
@@ -33,7 +32,7 @@ function AddComment({asin, setAllComment, setLoading, setShow}) {
         fetch("https://striveschool-api.herokuapp.com/api/comments/", {
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTM3YWIzZmU3NDZhMDAwMTQ4MTQzMmEiLCJpYXQiOjE2OTg0MTQ4MTMsImV4cCI6MTY5OTYyNDQxM30.MEt2ISJjBifylYxkGyIKwaJbmj-MHdsB0Dvrr7rGluc"
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTM3YWIzZmU3NDZhMDAwMTQ4MTQzMmEiLCJpYXQiOjE2OTg2ODI5NTQsImV4cCI6MTY5OTg5MjU1NH0.HHBtM4-HlPu0aYhgFK4ucJa0J5WmqpZZFSS5KULk3xo"
               },
               method: "POST",
               body: JSON.stringify(form),
@@ -47,10 +46,6 @@ function AddComment({asin, setAllComment, setLoading, setShow}) {
                     }
                 }
             )
-
-            
-          
-        
     }
 
 
