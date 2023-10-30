@@ -51,17 +51,20 @@ function AddComment({asin, setAllComment, setLoading}) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="text">
-        <Form.Label>Inserisci Recensione</Form.Label>
+      <h4>Inserisci una recensione!</h4>
+      <Form.Group className="mb-3 mt-2" controlId="text">
+        <Form.Label>Cosa ne pensi?</Form.Label>
         <Form.Control type="text" placeholder="Scrivi la tua recensione" required value={text} onChange={(e)=> setText(e.target.value)}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="stars">
         <Form.Label>Quanto ti è piaciuto?</Form.Label>
         <Form.Control type="number" min="1" max="5" required value={rate} onChange={(e)=> setRate(e.target.value)}/>
       </Form.Group>
-      <Button variant="primary" type="submit" >
-        Invia la tua recensione!
-      </Button>
+      <div className='d-flex justify-content-center align-items-center'>
+        <Button variant="primary" type="submit" >
+          Invia la tua recensione!
+        </Button>
+      </div>
     </Form>
   );
 }

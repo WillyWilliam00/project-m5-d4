@@ -10,8 +10,6 @@ function ModalComment({asin, show, setShow}) {
   const [allComment, setAllComment] = useState([])
   const [loading, setLoading] = useState(true)
   
-  
-    
     useEffect(() => {
 
         fetch(`https://striveschool-api.herokuapp.com/api/comments/${asin}`, {
@@ -34,7 +32,7 @@ function ModalComment({asin, show, setShow}) {
           <Modal.Title>Recensioni</Modal.Title>
         </Modal.Header>
         <Modal.Body >
-        <Container >
+        <Container style={{borderBottom: "2px solid black"}}>
           <Row style={{height: 400, overflow: "auto"}}>
           { loading && <DotSpinner 
                   className="spinner"
@@ -46,7 +44,7 @@ function ModalComment({asin, show, setShow}) {
               {!loading &&<CommentList allComment={allComment} setAllComment={setAllComment} setLoading={setLoading} asin={asin}/>}
           </Row>            
         </Container> 
-        <Container>
+        <Container style={{paddingTop: "10px"}}>
                 <AddComment asin={asin} setAllComment={setAllComment} setLoading={setLoading}/> 
         </Container>
         </Modal.Body>

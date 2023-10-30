@@ -3,7 +3,7 @@ import {Row, Col, Container} from "react-bootstrap";
 
 function Jumbotron() {
     return (
-        <Container>
+        <Container className="mt-5 pt-5">
             
                 <div className="jumbotron">
                     <h1 className="display-4 fw-bolder">EPICBOOKS</h1>

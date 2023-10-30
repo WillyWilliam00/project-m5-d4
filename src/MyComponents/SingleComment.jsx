@@ -36,10 +36,10 @@ export default function SingleComment({commmentText, commentRate, commentId, asi
     return(
 
      <>
-        <Col xs={12} style={{marginBlock: 5, borderBottom: "1px solid black"}} className="d-flex justify-content-between align-items-start" >
+        <Col xs={12} style={{marginBlock: 5, borderTop: "1px solid black", paddingTop: "10px"}} className="d-flex justify-content-between align-items-start" >
          <Col xs={10}>
            <div className="d-flex justify-content-between mb-2">
-               <span className="m-0 fw-bolder">Rating:</span><p className="m-0">{commentRate}</p>
+               <span className="m-0 fw-bolder">Rating:</span><p className="m-0 fw-bolder">{commentRate}</p>
            </div>
            <div>
                <span className="mb-3 fw-bolder">Recensione:</span>
@@ -51,14 +51,6 @@ export default function SingleComment({commmentText, commentRate, commentId, asi
           </Button>
       </Col>
       </>
-        
-
-                    
-                    
-                    
-                          
-
-
 
     )
 }

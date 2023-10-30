@@ -1,7 +1,7 @@
 import {Nav, Navbar} from "react-bootstrap";
 
 
-function MyNavBar() {
+function MyNavBar({name, setName}) {
   return (
     <Navbar fixed="top" expand="lg" className="ps-1" bg="dark" data-bs-theme="dark">
       
@@ -20,6 +20,10 @@ function MyNavBar() {
             <Nav.Link href="#link">Aboute</Nav.Link>
             <Nav.Link href="#link">Browse</Nav.Link>
           </Nav>
+          <label className="ms-auto pe-5" >
+                       <input className="input-text" name="TitleName" placeholder="Signore degli Anelli.." value={name} 
+                       onChange={(e) => {setName(e.target.value)}}/>
+            </label>
         </Navbar.Collapse>
       
     </Navbar>
